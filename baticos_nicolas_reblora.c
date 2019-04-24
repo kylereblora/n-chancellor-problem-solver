@@ -7,6 +7,9 @@
 //	-- Main Program
 int main() {
 
+	int N;
+	printf("Enter N: "); scanf("%d", &N);
+
 	return 0;
 }
 
