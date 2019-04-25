@@ -61,8 +61,9 @@ int main()
 				move++;
 				nopts[move]=0;
 
-				if(move==n+1)
+				if(move==n-1)
 				{
+					printf("Solution\n");
 
 				}
 
@@ -141,6 +142,12 @@ int main()
 					}
 
 				}
+			}
+			else 
+			{
+				move--;
+				nopts[move]--;
+
 			}
 		}
 	}
