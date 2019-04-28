@@ -1,0 +1,22 @@
+{
+  "name": "cmsc-142-project",
+  "version": "1.0.0",
+  "description": "N Chancellors Move Solver",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quinn704/cmsc-142-project.git"
+  },
+  "author": "Baticos, A.Q., Nicolas, M.J., & Reblora, K.M.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quinn704/cmsc-142-project/issues"
+  },
+  "homepage": "https://github.com/quinn704/cmsc-142-project#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
