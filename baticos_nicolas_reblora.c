@@ -23,7 +23,7 @@ int main(){
 		printf(" /                                                            Board #%d                                                            /\n", i+1);
 		printf(" ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n");
 		fscanf(fp, "%d\n", &n);
-		printf(" Matrix Size: %d\n", n);
+		printf("\n MATRIX SIZE: %d\n", n);
 
 		//	Chancellors Creation
 		char *chancellorStack = (char*) malloc(sizeof(char)*n);	
@@ -32,7 +32,7 @@ int main(){
 		//	Matrix Creation
 		int size = n*n;
 		char *board = (char*) malloc(sizeof(char)*size);	
-		printf(" Initial Board Configuration: \n ");
+		printf(" INITIAL BOARD CONFIGURATION \n ");
 		for(int j=0; j<size; j++){
 			fscanf(fp, "%c", &board[j]);
 			printf("%c", board[j]);
@@ -41,7 +41,7 @@ int main(){
 				printf("\n ");
 			}
 			if (board[j] == 'C') chancellorStack[chancellorC++] = j;
-		}
+		} printf("\n");
 
 		//	Board Error!
 		int hasNoSolution = 0, numberOfErrors = 0;
