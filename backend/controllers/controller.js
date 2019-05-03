@@ -27,9 +27,11 @@
 
 exports.findSolution = (req, res, next) => {
 
-  function start() {
-    return res.status(200).send("OK");
-  }
+	var string = req.query.string;
+	
+	function start() {
+		return res.status(200).send("OK");
+	}
 
   start();
 }

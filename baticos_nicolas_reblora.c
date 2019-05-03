@@ -19,7 +19,9 @@ int main(){
 	//	Process: Find All Solutions (per board)
 	for(int i=0; i<numOfBoards; i++){
 
-		printf("\n ********** Board #%d **********\n", i+1);
+		printf("\n ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n");
+		printf(" /                                                            Board #%d                                                            /\n", i+1);
+		printf(" ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n");
 		fscanf(fp, "%d\n", &n);
 		printf(" Matrix Size: %d\n", n);
 
@@ -30,13 +32,19 @@ int main(){
 		//	Matrix Creation
 		int size = n*n;
 		char *board = (char*) malloc(sizeof(char)*size);	
+		printf(" Initial Board Configuration: \n ");
 		for(int j=0; j<size; j++){
 			fscanf(fp, "%c", &board[j]);
-			if(j!=0 && (j+1)%n == 0) fscanf(fp, "\n");
+			printf("%c", board[j]);
+			if(j!=0 && (j+1)%n == 0) {
+				fscanf(fp, "\n");
+				printf("\n ");
+			}
 			if (board[j] == 'C') chancellorStack[chancellorC++] = j;
 		}
 
-		int hasNoSolution = 0;
+		//	Board Error!
+		int hasNoSolution = 0, numberOfErrors = 0;
 		for (int m=0; m<chancellorC; m++) {
 			for (int k=m; k<chancellorC; k++) {
 				if (m!=k)
@@ -46,7 +54,27 @@ int main(){
 					int a = chancellorStack[k] / n;
 					int b = chancellorStack[k] % n;
 					if (a == x || b == y || (abs(x-a)==2 && abs(y-b)==1) || (abs(x-a)==1 && abs(y-b)==2)) {
+						if (numberOfErrors==0) {
+							printf("------------------------------------------------------------------------------------------------\n");
+							printf(" There exist a chancellor(C) in the configuration that violates the rules for finding a solution!\n");							
+							printf(" ------------------------------------------------------------------------------------------------\n");
+							printf("\n **************************************************\n");
+							printf(" * Please resolve conflict between the following: *\n *                                                *\n");
+						}
+						printf(" *  --> CHANCELLOR_A[%d][%d] & CHANCELLOR_B[%d][%d]   *\n", x,y,a,b);
+						// printf(" *            xxxx   *\n");
+						printf(" *            ");
+						for (int p = 0; p < size; p++) {
+							if (p%n==0 && p>=n) printf("                                *\n *            ");
+							if (p==chancellorStack[m] || p==chancellorStack[k]) {
+								printf("X");
+							} else {
+								printf("%c", board[p]);
+							}
+						}
+						printf("                                *\n *                                                *\n");
 						hasNoSolution = 1;
+						numberOfErrors++;
 					}
 				}
 			}
@@ -159,7 +187,10 @@ int main(){
 				}
 			}
 		}
+		printf(" **************************************************\n\n");
+		printf(" =========================\n");
 		printf(" No. of Solutions Found: %d\n", solutions);
+		printf(" Errors Found: %d\n", numberOfErrors);
 	}
 
 	printf("\n == PROGRAM END ==\n\n");
