@@ -1,7 +1,5 @@
-export const fileRead = (input) => {
-    
-}
-
 export const solver = (file) => {
+    console.log(file);
 
+    
 }

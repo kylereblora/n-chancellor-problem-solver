@@ -1,12 +1,17 @@
 import React, {Component} from 'react';
-
+import { solver } from './solver'
+ 
 class App extends Component {
     state = {
-
+        content: '',
+        solutions: []
     }
 
     handleRead = (e) => {
-        console.log(e.target.result);
+        this.setState({content: e.target.result}, () => {
+            /*let solutions =*/ solver(this.state.content)
+            // this.setState({solutions})
+        });
         
     }
 
