@@ -16,12 +16,12 @@ export const solver = (file) => {
         let n = parseInt(lines[0]);
         lines.shift();
 
-        console.log(n);
+        // console.log(n);
         console.log(lines);
         
 
         // Chancellors Creation
-        let chancellorStack = [n];
+        let chancellorStack = [];
         let chancellorC = 0;
 
 
@@ -91,17 +91,30 @@ export const solver = (file) => {
                     nopts[move] = 0;
 
                     // SOLUTION FOUND!
-                    if (move=== n+1-chancellorC) {
-                        console.log("Solution", (solutions++)+1);
 
+                    if (move === n+1-chancellorC) {
+                        solutions++
+
+
+                        let solution = []
                         let count = 0;
                         for (let i=0; i<chancellorC; i++){
-							// solution[count] = chancellorStack[i];
+							solution[count] = chancellorStack[i];
 							count++;
-							console.log(chancellorStack[i]);
+							// console.log(chancellorStack[i]);
 						}
 
+                        for(let i=1; i<move;i++) {
+                            solution[count] = options[i][nopts[i]];
+                            count++
+							console.log(options[i][nopts[i]]);
+                        }
+
+                        console.log('\n');
+                        console.log(solutions);
+                        console.log('\n\n');
                         
+
                     } 
                     else if (move === 1) {
                         for (candidate=size-1; candidate >= 0; candidate--) {
@@ -128,12 +141,30 @@ export const solver = (file) => {
                     else {
                         for (candidate=1; candidate <= nopts[move-1]; candidate++) {
                             let topOfStack = options[move-1][nopts[move-1]];
+
+                            console.log('TOPOFSTACK    :', topOfStack);
+                            // TOS: 15
                             let x = parseInt(topOfStack / n);
                             let y = parseInt(topOfStack % n);
+                            // x: 3, y: 0
+
+                            // console.log('X    :', x);
+                            // console.log('Y    :', y);
+                            
+                            
 
                             let current = options[move-1][candidate];
+
+                            console.log('current    :', current);
+                            // current: 24
                             let a = parseInt(current / n);
                             let b = parseInt(current % n);
+
+                            // console.log('a    :', a);
+                            // console.log('b    :', b);
+                            
+                            console.log('\n\n');
+                            
                             let isValid = 1;
 
                             // Rook / Knight Move Checking
