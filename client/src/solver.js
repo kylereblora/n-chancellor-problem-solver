@@ -10,15 +10,12 @@ export const solver = (file) => {
     
     // remove the first element in lines array
     lines.shift();
-
+    let solution = []
+    
     for (let i=0; i < numOfBoards; i++) {
         
         let n = parseInt(lines[0]);
         lines.shift();
-
-        // console.log(n);
-        console.log(lines);
-        
 
         // Chancellors Creation
         let chancellorStack = [];
@@ -50,7 +47,6 @@ export const solver = (file) => {
             if (currentChar === 'C') chancellorStack[chancellorC++] = j
         }
 
-        console.log(board);
 
         let hasNoSolution = 0, numberOfErrors = 0;
 
@@ -82,8 +78,6 @@ export const solver = (file) => {
             move = start = 0;
             nopts[start] = 1;
 
-            console.log(options);
-            
 
             while (nopts[start] > 0) {
                 if (nopts[move] > 0) {
@@ -95,24 +89,23 @@ export const solver = (file) => {
                     if (move === n+1-chancellorC) {
                         solutions++
 
-
-                        let solution = []
-                        let count = 0;
+                        let tempSolution = []
+                        // let count = 0;
                         for (let i=0; i<chancellorC; i++){
-							solution[count] = chancellorStack[i];
-							count++;
-							// console.log(chancellorStack[i]);
+							tempSolution.push(chancellorStack[i]);
+							// count++;
 						}
 
                         for(let i=1; i<move;i++) {
-                            solution[count] = options[i][nopts[i]];
-                            count++
-							console.log(options[i][nopts[i]]);
+                            tempSolution.push(options[i][nopts[i]]);
+                            // count++
+							// console.log(options[i][nopts[i]]);
                         }
 
-                        console.log('\n');
-                        console.log(solutions);
-                        console.log('\n\n');
+                        // console.log('\n');
+                        // console.log(solutions);
+                        // console.log('\n\n');
+                        solution.push(tempSolution)
                         
 
                     } 
@@ -142,34 +135,17 @@ export const solver = (file) => {
                         for (candidate=1; candidate <= nopts[move-1]; candidate++) {
                             let topOfStack = options[move-1][nopts[move-1]];
 
-                            console.log('TOPOFSTACK    :', topOfStack);
-                            // TOS: 15
                             let x = parseInt(topOfStack / n);
                             let y = parseInt(topOfStack % n);
-                            // x: 3, y: 0
-
-                            // console.log('X    :', x);
-                            // console.log('Y    :', y);
-                            
-                            
 
                             let current = options[move-1][candidate];
 
-                            console.log('current    :', current);
-                            // current: 24
                             let a = parseInt(current / n);
                             let b = parseInt(current % n);
 
-                            // console.log('a    :', a);
-                            // console.log('b    :', b);
-                            
-                            console.log('\n\n');
-                            
-                            let isValid = 1;
-
                             // Rook / Knight Move Checking
 
-                            if (!(a===x || b===y || (Math.abs(x-a === 2) && Math.abs(y-b) === 1) || (Math.abs(x-a) === 1 && Math.abs(y-b)=== 2))) {
+                            if (!(a===x || b===y || (Math.abs(x-a) === 2 && Math.abs(y-b) === 1) || (Math.abs(x-a) === 1 && Math.abs(y-b)=== 2))) {
                                 nopts[move]++;
                                 options[move][nopts[move]] = current;
                             }
@@ -183,7 +159,12 @@ export const solver = (file) => {
             }            
         }
         
-        console.log("No. of solutions found: " + solutions);
+        console.log(solution);
+        console.log("No. of solutions found: " + solution.length);
+
+        return {
+            solution
+        }
     }
     
 }
