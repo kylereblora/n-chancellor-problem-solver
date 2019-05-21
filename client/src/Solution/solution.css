@@ -19,3 +19,7 @@
     width: 50px;
 }
 
+td {
+    border-radius: 10px;
+}
+

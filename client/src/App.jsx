@@ -3,6 +3,8 @@ import { solver } from './solver'
 import Configuration from './Configuration/Configuration'
 import './App.css'
 import './assets/style.css'
+import CraftingTable from './assets/crafttable.png';
+
 class App extends Component {
     state = {
         content: '',
@@ -50,7 +52,13 @@ class App extends Component {
 
                         :
 
-                        <p>Upload a configuration.</p>
+                        <div className="empty-board">
+                            <div className="filler">
+                                <img src={CraftingTable} alt="crafting table"/>
+                                <p>Upload a configuration.</p>
+                                <span className="app-title">FINDING CHANCY</span>
+                            </div>
+                        </div>
                     }
                 </div>
             </div>

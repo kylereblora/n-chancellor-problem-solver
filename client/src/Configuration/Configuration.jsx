@@ -41,15 +41,12 @@ class Configuration extends React.Component {
                             <div className="control" id="left">
                                 <button className="prev" onClick={this.handlePrevSolution}>&#10094;</button>
                             </div>
-                            <p>Solution {activeIndex+1} of {solutionSet.length}</p>
+                            <p>Solution <span>{activeIndex+1}</span> of <span>{solutionSet.length}</span></p>
                             <div className="control" id="right">
                                 <button className="next" onClick={this.handleNextSolution}>&#10095;</button>
                             </div>
                         </div>
-                        {/* <div className="controls">
-                            <button className="prev" onClick={this.handlePrevSolution}>&#10094;</button>
-                            <button className="next" onClick={this.handleNextSolution}>&#10095;</button>
-                        </div> */}
+                       
                         
                     </div>
     

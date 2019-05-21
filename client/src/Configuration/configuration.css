@@ -14,9 +14,17 @@
     align-items: center;
     justify-content: center;
     display: flex;
-    border: 1px solid black;
+    border: 5px solid #204b0d;
     border-radius: 15px;
     width: 50%;
     margin-left: 25%;
-    background: whitesmoke
+    background: whitesmoke;
+}
+
+.caption p {
+    color: #474747;
+}
+
+.caption p span {
+    color: #204b0d;
 }
