@@ -90,21 +90,14 @@ export const solver = (file) => {
                         solutions++
 
                         let tempSolution = []
-                        // let count = 0;
                         for (let i=0; i<chancellorC; i++){
 							tempSolution.push(chancellorStack[i]);
-							// count++;
 						}
 
                         for(let i=1; i<move;i++) {
                             tempSolution.push(options[i][nopts[i]]);
-                            // count++
-							// console.log(options[i][nopts[i]]);
                         }
 
-                        // console.log('\n');
-                        // console.log(solutions);
-                        // console.log('\n\n');
                         solution.push(tempSolution)
                         
 

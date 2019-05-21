@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { solver } from './solver'
- 
+import Solution from './Solution/Solution'
+
 class App extends Component {
     state = {
         content: '',
@@ -9,8 +10,8 @@ class App extends Component {
 
     handleRead = (e) => {
         this.setState({content: e.target.result}, () => {
-            /*let solutions =*/ solver(this.state.content)
-            // this.setState({solutions})
+            let solutions = solver(this.state.content)
+            this.setState({solutions})
         });
         
     }
@@ -25,9 +26,35 @@ class App extends Component {
 
 
     render() {
+
+        console.log(this.state.solutions.solution);
+        
+
         return(
             <div>
                 <input type="file" accept=".in" onChange={this.handleFileChange}/>
+                <div>
+                    {
+                        this.state.solutions.solution && this.state.solutions.solution.length > 0 ?
+
+                        <div>
+                            {
+                                this.state.solutions.solution.map((sol, index) => {
+                                   return (
+                                    <div key={index}>
+                                        <Solution sol={sol} />
+                                        {/* <p>{sol}</p> */}
+                                    </div>
+                                   )
+                                })
+                            }
+                        </div>
+
+                        :
+
+                        <p>Upload a configuration.</p>
+                    }
+                </div>
             </div>
         );
     }
