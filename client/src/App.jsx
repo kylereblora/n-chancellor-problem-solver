@@ -40,10 +40,10 @@ class App extends Component {
                             {
                                 this.state.solutions.solution.map((sol, index) => {
                                    return (
-                                    <div className="current-solution" key={index}>
-                                        <p>Configuration #{index+1}</p>
+                                    <fieldset className="current-solution" key={index}>
+                                        <legend>Configuration #{index+1}</legend>
                                         <Configuration solutionSet={sol} />
-                                    </div>
+                                    </fieldset>
                                    )
                                 })
                             }
