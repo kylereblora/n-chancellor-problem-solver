@@ -1,37 +1,49 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100%;
+  padding: 24px;
+  background: url(./assets/whitewool.png);
+  background-repeat: repeat;
+  background-size: 100vh;
+  font-family: 'League Spartan Bold', sans-serif;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+  font-size: 1.25em;
+  font-weight: 700;
   color: white;
+  background-color: #337915;
+  display: inline-block;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: 'League Spartan', sans-serif;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.inputfile:focus + label,
+.inputfile + label:hover {
+  background-color: #285e11;
 }
 
-.wrapper {
-  height: 100vh;
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.current-solution {
+  text-align: center;
+  margin-top: 50px;
+  background: white;
 }

@@ -29,7 +29,7 @@ class Configuration extends React.Component {
         
     
         return (
-            <div>
+            <div className="config">
                 {
                     solutionSet && solutionSet.length > 0 ?
     
@@ -42,6 +42,9 @@ class Configuration extends React.Component {
                             <div className="control" id="right">
                                 <button className="next" onClick={this.handleNextSolution}>&#10095;</button>
                             </div>
+                        </div>
+                        <div>
+                            <p>Solution {activeIndex+1} of {solutionSet.length}</p>
                         </div>
                         {/* <div className="controls">
                             <button className="prev" onClick={this.handlePrevSolution}>&#10094;</button>

@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import { solver } from './solver'
 import Configuration from './Configuration/Configuration'
-
+import './App.css'
+import './assets/style.css'
 class App extends Component {
     state = {
         content: '',
@@ -28,8 +29,9 @@ class App extends Component {
     render() {
 
         return(
-            <div>
-                <input type="file" accept=".in" onChange={this.handleFileChange}/>
+            <div className="home">
+                <input className="inputfile" type="file" name="file" id="file" accept=".in" onChange={this.handleFileChange}/>
+                <label htmlFor="file">Choose a file</label>
                 <div>
                     {
                         this.state.solutions.solution && this.state.solutions.solution.length > 0 ?
@@ -38,10 +40,9 @@ class App extends Component {
                             {
                                 this.state.solutions.solution.map((sol, index) => {
                                    return (
-                                    <div key={index}>
+                                    <div className="current-solution" key={index}>
                                         <p>Configuration #{index+1}</p>
                                         <Configuration solutionSet={sol} />
-                                        {/* <p>{sol}</p> */}
                                     </div>
                                    )
                                 })
