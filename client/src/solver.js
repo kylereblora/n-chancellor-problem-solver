@@ -1,5 +1,4 @@
 export const solver = (file) => {
-    // console.log(file);
 
     let filecontent = file.split('\n');
 
@@ -37,7 +36,7 @@ export const solver = (file) => {
         // Matrix Creation
         let size = n*n
         let board = []
-
+        let boardSolution = []
         
         for (let j=0; j<stringifiedMatrix.length; j++) {
             let currentChar = stringifiedMatrix[j]
@@ -98,7 +97,7 @@ export const solver = (file) => {
                             tempSolution.push(options[i][nopts[i]]);
                         }
 
-                        solution.push(tempSolution)
+                        boardSolution.push(tempSolution)
                         
 
                     } 
@@ -152,12 +151,12 @@ export const solver = (file) => {
             }            
         }
         
-        console.log(solution);
-        console.log("No. of solutions found: " + solution.length);
+        solution.push(boardSolution);
+        
+    }
 
-        return {
-            solution
-        }
+    return {
+        solution
     }
     
 }

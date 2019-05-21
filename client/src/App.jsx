@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { solver } from './solver'
-import Solution from './Solution/Solution'
+import Configuration from './Configuration/Configuration'
 
 class App extends Component {
     state = {
@@ -27,9 +27,6 @@ class App extends Component {
 
     render() {
 
-        console.log(this.state.solutions.solution);
-        
-
         return(
             <div>
                 <input type="file" accept=".in" onChange={this.handleFileChange}/>
@@ -42,7 +39,8 @@ class App extends Component {
                                 this.state.solutions.solution.map((sol, index) => {
                                    return (
                                     <div key={index}>
-                                        <Solution sol={sol} />
+                                        <p>Configuration #{index+1}</p>
+                                        <Configuration solutionSet={sol} />
                                         {/* <p>{sol}</p> */}
                                     </div>
                                    )
