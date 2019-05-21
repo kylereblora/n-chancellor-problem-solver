@@ -1,0 +1,16 @@
+.regularBlock {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+    
+}
+
+.chancyBlock {
+    padding: 20px;
+    background: blue;
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+}

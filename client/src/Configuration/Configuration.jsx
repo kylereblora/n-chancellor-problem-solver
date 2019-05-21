@@ -1,6 +1,6 @@
 import React from 'react'
 import Solution from '../Solution/Solution';
-// import './solution.css'
+import './configuration.css'
 // import { Grid, Segment } from 'semantic-ui-react'
 
 const Configuration = (props) => {
@@ -15,7 +15,7 @@ const Configuration = (props) => {
 
                 solutionSet.map((solution,index) => {
                     return (
-                        <div key={index}>
+                        <div key={index} className="configBoard">
                             <Solution specificSolution={solution} />
                         </div>
                     )

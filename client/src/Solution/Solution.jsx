@@ -1,4 +1,5 @@
 import React from 'react'
+import './solution.css';
 
 function zeros(dimensions) {
     var array = [];
@@ -37,9 +38,16 @@ const Solution = (props) => {
                         <div key={i}>
                             {
                                 row.map((col, j) => {
-                                    return (
-                                        <span key={j}>{col}</span>
+                                    
+                                    if (col === 1) return (
+                                        <span key={j} className="chancyBlock"></span>
                                     )
+
+                                    else return (
+                                        <span key={j} className="regularBlock"></span>
+                                    )
+
+                                    
                                 })
                             }
                         </div>
