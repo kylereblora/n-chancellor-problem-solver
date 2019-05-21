@@ -31,30 +31,30 @@ const Solution = (props) => {
         
 
     return (
-        <div>
+        <table align="center" className="table">
             {
                 tempArray.map((row, i) => {
                     return (
-                        <div key={i}>
+                        <tr key={i}>
                             {
                                 row.map((col, j) => {
                                     
                                     if (col === 1) return (
-                                        <span key={j} className="chancyBlock"></span>
+                                        <td key={j} className="chancyBlock"></td>
                                     )
 
                                     else return (
-                                        <span key={j} className="regularBlock"></span>
+                                        <td key={j} className="regularBlock"></td>
                                     )
 
                                     
                                 })
                             }
-                        </div>
+                        </tr>
                     )
                 })
             }
-        </div>
+        </table>
     )
 }
 

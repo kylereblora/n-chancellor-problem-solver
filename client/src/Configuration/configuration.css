@@ -1,4 +1,16 @@
 .configBoard {
-    margin: 10px;
-    padding: 20px;
+    display: flex;
+    margin: 24px;
+}
+
+.control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control button {
+    padding: 12px;
+    margin-top: 250%;
+    border-radius: 50%;
 }
