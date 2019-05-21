@@ -57,6 +57,7 @@ class App extends Component {
                                 <img src={CraftingTable} alt="crafting table"/>
                                 <p>Upload a configuration.</p>
                                 <span className="app-title">FINDING CHANCY</span>
+                                <p className="names">Quinn Baticos | Mark Jay Nicolas | Kyle Reblora</p>
                             </div>
                         </div>
                     }
