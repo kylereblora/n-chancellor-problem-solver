@@ -35,16 +35,16 @@ class Configuration extends React.Component {
     
                     <div>
                         <div className="configBoard">
+                            <Solution specificSolution={solutionSet[activeIndex]} />
+                        </div>
+                        <div className="caption">
                             <div className="control" id="left">
                                 <button className="prev" onClick={this.handlePrevSolution}>&#10094;</button>
                             </div>
-                            <Solution specificSolution={solutionSet[activeIndex]} />
+                            <p>Solution {activeIndex+1} of {solutionSet.length}</p>
                             <div className="control" id="right">
                                 <button className="next" onClick={this.handleNextSolution}>&#10095;</button>
                             </div>
-                        </div>
-                        <div>
-                            <p>Solution {activeIndex+1} of {solutionSet.length}</p>
                         </div>
                         {/* <div className="controls">
                             <button className="prev" onClick={this.handlePrevSolution}>&#10094;</button>

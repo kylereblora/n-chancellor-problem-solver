@@ -22,7 +22,6 @@ class App extends Component {
             let reader = new FileReader();
             reader.onload = this.handleRead;
             reader.readAsText(file);
-       
     }
 
 
