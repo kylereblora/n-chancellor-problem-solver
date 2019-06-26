@@ -1,0 +1,30 @@
+.configBoard {
+    display: flex;
+    margin: 24px;
+}
+
+.control button {
+    padding: 12px;
+    border-radius: 50%;
+    margin: 0 12px 0 12px;
+}
+
+
+.caption {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border: 5px solid #204b0d;
+    border-radius: 15px;
+    width: 50%;
+    margin-left: 25%;
+    background: whitesmoke;
+}
+
+.caption p {
+    color: #474747;
+}
+
+.caption p span {
+    color: #204b0d;
+}

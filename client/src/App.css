@@ -1,0 +1,99 @@
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+  padding: 24px;
+  background: url(./assets/whitewool.png);
+  background-repeat: repeat;
+  background-size: 250px;
+  font-family: 'League Spartan Bold', sans-serif;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: white;
+  background-color: #337915;
+  display: inline-block;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: 'League Spartan Bold', sans-serif;
+  
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  background-color: #285e11;
+}
+
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+.current-solution {
+  text-align: center;
+  margin-top: 50px;
+  background: white;
+  min-width: 500px;
+}
+
+.empty-board {
+  height: 80vh;
+}
+
+.filler {
+  background: white;
+  background-repeat: repeat;
+  background-size: cover;
+  min-width: 600px;
+  text-align: center;
+  border-radius: 15px;
+  border: 10px dashed #204b0d;
+  height: 500px;
+  /* line-height: 500px; */
+  margin: 10px 0 0 0;
+}
+
+.filler img {
+  margin: 80px 0 0 0;
+}
+
+.filler p {
+  color: #474747;
+}
+
+fieldset {
+  border-radius: 15px;
+  border: 10px dashed #204b0d;
+}
+
+legend {
+  border: 10px solid #204b0d;
+  padding: 12px;
+  background: whitesmoke;
+  border-radius: 15px;
+  color : #204b0d;
+}
+
+
+.app-title {
+  font-size: 35px;
+  color: #6e2520;
+
+}
+
+.names {
+  font-size: 12px;
+}

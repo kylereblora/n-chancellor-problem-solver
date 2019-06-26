@@ -1,0 +1,40 @@
+.regularBlock {
+    padding: 20px;
+    background: url(../assets/ironore.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+    
+}
+
+.chancyBlock {
+    padding: 20px;
+    background: url(../assets/creeper.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+}
+
+td {
+    border-radius: 10px;
+}
+
+table {
+    opacity: 1;
+    -webkit-animation: fadeinout 1.5s linear;
+    animation: fadeinout 1.5s linear;
+}
+
+@-webkit-keyframes fadeinout {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+}
+  
+@keyframes fadeinout {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+}
